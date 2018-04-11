@@ -57,7 +57,7 @@ public class CharacterHealth : MonoBehaviour, IDamageable
 
 	private void Start()
 	{
-		Health = MaxHealth;
+		Health = editorMaxHealth;
 	}
 
     public void Damage(DamageData hit)
