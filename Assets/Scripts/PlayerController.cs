@@ -39,6 +39,11 @@ public class PlayerController : MonoBehaviour
         {
             gun.Shoot();
         }
+
+        if( Input.GetKeyDown(KeyCode.Escape) && !(characterHealth.Health <= 0))
+        {
+            ServiceManager.instance.uiController.TogglePause();
+        }
     }
 
     void PlayerInput()
@@ -71,6 +76,8 @@ public class PlayerController : MonoBehaviour
 
     void Death()
     {
+        characterHealth.canTakeDamage = false;
+        ServiceManager.instance.uiController.TogglePause();
         //Lose a life
         //Respawn 
     }

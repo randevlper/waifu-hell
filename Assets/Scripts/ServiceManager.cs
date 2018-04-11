@@ -2,18 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ServiceManager : MonoBehaviour {
+public class ServiceManager : MonoBehaviour
+{
 
-	public static BulletManager bulletManager;
-	public static GameManager gameManager;
-	public static EnemyManager enemyManager;
-	//public static Camera mainCamera;
+    public static ServiceManager instance;
 
-	// Use this for initialization
-	void Awake () {
-		bulletManager = GetComponent<BulletManager>();
-		gameManager = GetComponent<GameManager>();
-		enemyManager = GetComponent<EnemyManager>();
-		DontDestroyOnLoad(gameObject);
-	}
+    public static BulletManager bulletManager;
+    public static GameManager gameManager;
+    public static EnemyManager enemyManager;
+    public static LevelManager levelManager;
+    public UIController uiController;
+    //public static Camera mainCamera;
+
+    // Use this for initialization
+    void Awake()
+    {
+        if (instance == null)
+        {
+			instance = this;
+            bulletManager = GetComponent<BulletManager>();
+            gameManager = GetComponent<GameManager>();
+            enemyManager = GetComponent<EnemyManager>();
+            levelManager = GetComponent<LevelManager>();
+        }
+		else
+		{
+			Destroy(gameObject);
+		}
+    }
 }

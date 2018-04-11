@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 114102123645444428}
   - component: {fileID: 114303031566996068}
   - component: {fileID: 61114147767009484}
+  - component: {fileID: 114078883118955054}
+  - component: {fileID: 114610603009774336}
   m_Layer: 0
   m_Name: _ServiceManager
   m_TagString: Untagged
@@ -69,6 +71,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 24.079237, y: 1.668066}
   m_EdgeRadius: 0
+--- !u!114 &114078883118955054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798910981281502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e915f332f29f640ada5ef7a5fc7faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114090427965864190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6af6b176dabb748a0295933ef94585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiController: {fileID: 0}
 --- !u!114 &114102123645444428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,6 +122,7 @@ MonoBehaviour:
     spawnRate: 0.75
   - prefab: {fileID: 1898920072596112, guid: 21e19c9f796c37643a1c9b790cd3fbdb, type: 2}
     spawnRate: 0.25
+  enemys: []
   spawnTime: 1
   spawnArea: {fileID: 61114147767009484}
 --- !u!114 &114410719533156782
@@ -123,3 +138,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1747605616808460, guid: 0fb61b8dcd40dd248843eea624198354,
     type: 2}
+--- !u!114 &114610603009774336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798910981281502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155d7b3b4c2eff04ea403100041c4860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

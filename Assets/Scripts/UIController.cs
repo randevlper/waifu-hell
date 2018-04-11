@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour {
 	{
 		PlayerController.instance.characterHealth.OnHealthChanged = SetHealth;
 		GameManager.OnScoreChange = SetScore;
+		pauseMenu.SetActive(false);
 	}
 
 	[SerializeField] private Text scoreText;
@@ -21,5 +22,21 @@ public class UIController : MonoBehaviour {
 	public void SetHealth(int health)
 	{
 		healthText.text = health.ToString();
+	}
+	
+	[SerializeField] private GameObject pauseMenu;
+	bool isPaused;
+	public void TogglePause()
+	{
+		if(isPaused)
+		{
+			pauseMenu.SetActive(false);
+			Time.timeScale = 1;
+		}
+		else
+		{
+			pauseMenu.SetActive(true);
+			Time.timeScale = 0;
+		}
 	}
 }
